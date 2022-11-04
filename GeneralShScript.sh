@@ -536,6 +536,7 @@ apt-get clean -y
 #Order of Operations (Take notes throughout)
 #1.Read readme
 #2.answer forensics
+#	-apt install git
 #3.git clone https://github.com/Adamapb/...
 #./<file name>
 #4.Check scoring
