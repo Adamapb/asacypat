@@ -537,7 +537,8 @@ apt-get clean -y
 #1.Read readme
 #2.answer forensics
 #	-apt install git
-#3.git clone https://github.com/Adamapb/...
+#3.git clone https://github.com/Adamapb/asacypat.git
+#	chmod +x <file name>
 #./<file name>
 #4.Check scoring
 #5.do user tasks (Perms, acct types, passwords, super users)
