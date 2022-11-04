@@ -25,8 +25,8 @@ apt-get dist-upgrade -y
 #cat /var/log/lynis-report.dat | grep "manual" >> lynis.log
 
 #FTP Removal
-apt-get remove ftp
-apt-get remove pure-ftp
+apt-get remove ftp -y
+apt-get remove pure-ftp -y
 
 
 
