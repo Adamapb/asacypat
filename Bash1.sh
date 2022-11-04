@@ -167,28 +167,28 @@ __EOF__
 chmod +x /etc/profile.d/autologout.sh
 
 #Install AVG/Scan outputs to /etc/avgscan.log
-wget -c http://download.avgfree.com/filedir/inst/avg85flx-r874-a3473.i386.deb
-dpkg -i avg85flx-r874-a3473.i386.deb
-avgctl --start
-avgupdate
-cd /etc
-touch avgscan.log
-avgscan / > avgscan.log
-cd
+#wget -c http://download.avgfree.com/filedir/inst/avg85flx-r874-a3473.i386.deb
+#dpkg -i avg85flx-r874-a3473.i386.deb
+#avgctl --start
+#avgupdate
+#cd /etc
+#touch avgscan.log
+#avgscan / > avgscan.log
+#cd
 
 
 #Rootkit Scans-Write to /etc/rootkits.log--rootkits2.log
-apt-get install chkrootkit -y
-cd /etc
-touch rootkits.log
-chkrootkit -q > rootkits.log
-cd
-apt-get install rkhunter -y
-rkhunter --update
-cd /etc
-touch rootkits2.log
-rkhunter --check > rootkits2.log
-cd
+#apt-get install chkrootkit -y
+#cd /etc
+#touch rootkits.log
+#chkrootkit -q > rootkits.log
+#cd
+#apt-get install rkhunter -y
+#rkhunter --update
+#cd /etc
+#touch rootkits2.log
+#rkhunter --check > rootkits2.log
+#cd
 
 sudo apt install firefox -y
 
@@ -523,9 +523,11 @@ ss -an4 > /var/local/netstat.log
 ps axk start_time -o start_time,pid,user,cmd >> /var/local/pslist.log
 
 #Installation and first run of ClamAV
-apt-get install clamav -y
-freshclam
-clamscan -r /*
+#apt-get install clamav -y
+#freshclam
+#clamscan -r /*
+
+systemctl reload postfix
 
 apt-get autoremove -y
 apt-get autoclean -y
@@ -549,6 +551,8 @@ apt-get clean -y
 #10.view active ports
 #11.check system spec utilization
 #	-Run Lynis. Commands near top of script
+#	-Try rkhunter/check for rootits?
+#	-Run avast(avg antivirus)/clam
 #12.check scoring
 #13.review readme, double check update status on named applications
 #14.If not 100, **brainstorm**, review config files, review running services
