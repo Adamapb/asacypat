@@ -25,8 +25,8 @@ apt-get dist-upgrade -y
 #cat /var/log/lynis-report.dat | grep "manual" >> lynis.log
 
 #FTP Removal
-apt-get remove ftp -y
-apt-get remove pure-ftp -y
+apt-get remove ftp
+apt-get remove pure-ftp
 
 
 
@@ -167,28 +167,28 @@ __EOF__
 chmod +x /etc/profile.d/autologout.sh
 
 #Install AVG/Scan outputs to /etc/avgscan.log
-#wget -c http://download.avgfree.com/filedir/inst/avg85flx-r874-a3473.i386.deb
-#dpkg -i avg85flx-r874-a3473.i386.deb
-#avgctl --start
-#avgupdate
-#cd /etc
-#touch avgscan.log
-#avgscan / > avgscan.log
-#cd
+wget -c http://download.avgfree.com/filedir/inst/avg85flx-r874-a3473.i386.deb
+dpkg -i avg85flx-r874-a3473.i386.deb
+avgctl --start
+avgupdate
+cd /etc
+touch avgscan.log
+avgscan / > avgscan.log
+cd
 
 
 #Rootkit Scans-Write to /etc/rootkits.log--rootkits2.log
-#apt-get install chkrootkit -y
-#cd /etc
-#touch rootkits.log
-#chkrootkit -q > rootkits.log
-#cd
-#apt-get install rkhunter -y
-#rkhunter --update
-#cd /etc
-#touch rootkits2.log
-#rkhunter --check > rootkits2.log
-#cd
+apt-get install chkrootkit -y
+cd /etc
+touch rootkits.log
+chkrootkit -q > rootkits.log
+cd
+apt-get install rkhunter -y
+rkhunter --update
+cd /etc
+touch rootkits2.log
+rkhunter --check > rootkits2.log
+cd
 
 sudo apt install firefox -y
 
@@ -269,7 +269,95 @@ cd /etc
 touch backdoors.log
 netstat -ntlup | grep -e "netcat" -e "nc" -e "ncat" >> /etc/backdoors.log
 
-
+#Delete personal file types
+find / -name '*.mp3' -type f -delete
+find / -name '*.mov' -type f -delete
+find / -name '*.mp4' -type f -delete
+find / -name '*.avi' -type f -delete
+find / -name '*.mpg' -type f -delete
+find / -name '*.mpeg' -type f -delete
+find / -name '*.flac' -type f -delete
+find / -name '*.m4a' -type f -delete
+find / -name '*.flv' -type f -delete
+find / -name '*.ogg' -type f -delete
+find / -name '*.midi' -type f -delete
+find / -name '*.mid' -type f -delete
+find / -name '*.mod' -type f -delete
+find / -name '*.mp3' -type f -delete
+find / -name '*.mp2' -type f -delete	
+find / -name '*.mpa' -type f -delete
+find / -name '*.abs' -type f -delete
+find / -name '*.mpega' -type f -delete
+find / -name '*.au' -type f -delete
+find / -name '*.snd' -type f -delete
+find / -name '*.wav' -type f -delete
+find / -name '*.aiff' -type f -delete
+find / -name '*.aif' -type f -delete
+find / -name '*.sid' -type f -delete
+find / -name '*.flac' -type f -delete
+find / -name '*.ogg' -type f -delete
+find / -name '*.mpeg' -type f -delete
+find / -name '*.mpg' -type f -delete
+find / -name '*.mpe' -type f -delete
+find / -name '*.dl' -type f -delete
+find / -name '*.movie' -type f -delete
+find / -name '*.movi' -type f -delete
+find / -name '*.mv' -type f -delete
+find / -name '*.iff' -type f -delete
+find / -name '*.anim5' -type f -delete
+find / -name '*.anim3' -type f -delete
+find / -name '*.anim7' -type f -delete
+find / -name '*.avi' -type f -delete
+find / -name '*.vfw' -type f -delete
+find / -name '*.avx' -type f -delete
+find / -name '*.fli' -type f -delete
+find / -name '*.flc' -type f -delete
+find / -name '*.mov' -type f -delete
+find / -name '*.qt' -type f -delete
+find / -name '*.spl' -type f -delete
+find / -name '*.swf' -type f -delete
+find / -name '*.dcr' -type f -delete
+find / -name '*.dir' -type f -delete
+find / -name '*.dxr' -type f -delete
+find / -name '*.rpm' -type f -delete
+find / -name '*.rm' -type f -delete
+find / -name '*.smi' -type f -delete
+find / -name '*.ra' -type f -delete
+find / -name '*.ram' -type f -delete
+find / -name '*.rv' -type f -delete
+find / -name '*.wmv' -type f -delete
+find / -name '*.asf' -type f -delete
+find / -name '*.asx' -type f -delete
+find / -name '*.wma' -type f -delete
+find / -name '*.wax' -type f -delete
+find / -name '*.wmv' -type f -delete
+find / -name '*.wmx' -type f -delete
+find / -name '*.3gp' -type f -delete
+find / -name '*.mov' -type f -delete
+find / -name '*.mp4' -type f -delete
+find / -name '*.avi' -type f -delete
+find / -name '*.swf' -type f -delete
+find / -name '*.flv' -type f -delete
+find / -name '*.m4v' -type f -delete
+find / -name '*.tiff' -type f -delete
+find / -name '*.tif' -type f -delete
+find / -name '*.rs' -type f -delete
+find / -name '*.im1' -type f -delete
+find / -name '*.gif' -type f -delete
+find / -name '*.jpeg' -type f -delete
+find / -name '*.jpg' -type f -delete
+find / -name '*.jpe' -type f -delete
+find / -name '*.png' -type f -delete
+find / -name '*.rgb' -type f -delete
+find / -name '*.xwd' -type f -delete
+find / -name '*.xpm' -type f -delete
+find / -name '*.ppm' -type f -delete
+find / -name '*.pbm' -type f -delete
+find / -name '*.pgm' -type f -delete
+find / -name '*.pcx' -type f -delete
+find / -name '*.ico' -type f -delete
+find / -name '*.svg' -type f -delete
+find / -name '*.svgz' -type f -delete
 
 #Changes perms of files that are commonly exploited
 chown root:root /etc/securetty
@@ -284,6 +372,75 @@ chmod 440 /etc/sudoers
 chmod 640 /etc/shadow
 chown root:root /etc/shadow
 
+#Lists all files with perms 700-777 in fileperms.log
+cd /etc
+touch fileperms.log
+cd
+find / -type f -perm 777 >> /etc/fileperms.log
+find / -type f -perm 776 >> /etc/fileperms.log
+find / -type f -perm 775 >> /etc/fileperms.log
+find / -type f -perm 774 >> /etc/fileperms.log
+find / -type f -perm 773 >> /etc/fileperms.log
+find / -type f -perm 772 >> /etc/fileperms.log
+find / -type f -perm 771 >> /etc/fileperms.log
+find / -type f -perm 770 >> /etc/fileperms.log
+find / -type f -perm 767 >> /etc/fileperms.log
+find / -type f -perm 766 >> /etc/fileperms.log
+find / -type f -perm 765 >> /etc/fileperms.log
+find / -type f -perm 764 >> /etc/fileperms.log
+find / -type f -perm 763 >> /etc/fileperms.log
+find / -type f -perm 762 >> /etc/fileperms.log
+find / -type f -perm 761 >> /etc/fileperms.log
+find / -type f -perm 760 >> /etc/fileperms.log
+find / -type f -perm 757 >> /etc/fileperms.log
+find / -type f -perm 756 >> /etc/fileperms.log
+find / -type f -perm 755 >> /etc/fileperms.log
+find / -type f -perm 754 >> /etc/fileperms.log
+find / -type f -perm 753 >> /etc/fileperms.log
+find / -type f -perm 752 >> /etc/fileperms.log
+find / -type f -perm 751 >> /etc/fileperms.log
+find / -type f -perm 750 >> /etc/fileperms.log
+find / -type f -perm 747 >> /etc/fileperms.log
+find / -type f -perm 746 >> /etc/fileperms.log
+find / -type f -perm 745 >> /etc/fileperms.log
+find / -type f -perm 744 >> /etc/fileperms.log
+find / -type f -perm 743 >> /etc/fileperms.log
+find / -type f -perm 742 >> /etc/fileperms.log
+find / -type f -perm 741 >> /etc/fileperms.log
+find / -type f -perm 740 >> /etc/fileperms.log
+find / -type f -perm 737 >> /etc/fileperms.log
+find / -type f -perm 736 >> /etc/fileperms.log
+find / -type f -perm 735 >> /etc/fileperms.log
+find / -type f -perm 734 >> /etc/fileperms.log
+find / -type f -perm 733 >> /etc/fileperms.log
+find / -type f -perm 732 >> /etc/fileperms.log
+find / -type f -perm 731 >> /etc/fileperms.log
+find / -type f -perm 730 >> /etc/fileperms.log
+find / -type f -perm 727 >> /etc/fileperms.log
+find / -type f -perm 726 >> /etc/fileperms.log
+find / -type f -perm 725 >> /etc/fileperms.log
+find / -type f -perm 724 >> /etc/fileperms.log
+find / -type f -perm 723 >> /etc/fileperms.log
+find / -type f -perm 722 >> /etc/fileperms.log
+find / -type f -perm 721 >> /etc/fileperms.log
+find / -type f -perm 720 >> /etc/fileperms.log
+find / -type f -perm 717 >> /etc/fileperms.log
+find / -type f -perm 716 >> /etc/fileperms.log
+find / -type f -perm 715 >> /etc/fileperms.log
+find / -type f -perm 714 >> /etc/fileperms.log
+find / -type f -perm 713 >> /etc/fileperms.log
+find / -type f -perm 712 >> /etc/fileperms.log
+find / -type f -perm 711 >> /etc/fileperms.log
+find / -type f -perm 710 >> /etc/fileperms.log
+find / -type f -perm 707 >> /etc/fileperms.log
+find / -type f -perm 706 >> /etc/fileperms.log
+find / -type f -perm 705 >> /etc/fileperms.log
+find / -type f -perm 704 >> /etc/fileperms.log
+find / -type f -perm 703 >> /etc/fileperms.log
+find / -type f -perm 702 >> /etc/fileperms.log
+find / -type f -perm 701 >> /etc/fileperms.log
+find / -type f -perm 700 >> /etc/fileperms.log
+cd
 
 #lists all php files in /etc/phpfiles.log ('/var/cache/dictionaries-common/sqspell.php' is a system PHP file)
 find / -name "*.php" -type f >> /etc/phpfiles.log
@@ -366,11 +523,9 @@ ss -an4 > /var/local/netstat.log
 ps axk start_time -o start_time,pid,user,cmd >> /var/local/pslist.log
 
 #Installation and first run of ClamAV
-#apt-get install clamav -y
-#freshclam
-#clamscan -r /*
-
-systemctl reload postfix
+apt-get install clamav -y
+freshclam
+clamscan -r /*
 
 apt-get autoremove -y
 apt-get autoclean -y
@@ -394,8 +549,6 @@ apt-get clean -y
 #10.view active ports
 #11.check system spec utilization
 #	-Run Lynis. Commands near top of script
-#	-Try rkhunter/check for rootits?
-#	-Run avast(avg antivirus)/clam
 #12.check scoring
 #13.review readme, double check update status on named applications
 #14.If not 100, **brainstorm**, review config files, review running services
