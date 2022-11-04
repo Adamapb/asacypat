@@ -24,9 +24,6 @@ apt-get dist-upgrade -y
 #cat /var/log/lynis-report.dat | grep "network_listen" >> lynis.log
 #cat /var/log/lynis-report.dat | grep "manual" >> lynis.log
 
-#Misc
-apt-get dist-upgrade
-
 #FTP Removal
 apt-get remove ftp
 apt-get remove pure-ftp
