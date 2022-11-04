@@ -11,16 +11,18 @@ apt-get upgrade -y
 apt-get dist-upgrade -y
 
 #Installs Lynis, writes scan results to lynis.log
-cd /usr/local
-git clone https://github.com/CISOfy/lynis
-cd lynis
-./lynis audit system
-cd
-cat /var/log/lynis-report.dat | grep "suggestion" >> lynis.log
-cat /var/log/lynis-report.dat | grep "warning" >> lynis.log
-cat /var/log/lynis-report.dat | grep "vulnerable" >> lynis.log
-cat /var/log/lynis-report.dat | grep "network_listen" >> lynis.log
-cat /var/log/lynis-report.dat | grep "manual" >> lynis.log
+#cd /usr/local
+#git clone https://github.com/CISOfy/lynis
+#cd lynis
+#./lynis audit system
+#cd
+
+#Unnecessary
+#cat /var/log/lynis-report.dat | grep "suggestion" >> lynis.log
+#cat /var/log/lynis-report.dat | grep "warning" >> lynis.log
+#cat /var/log/lynis-report.dat | grep "vulnerable" >> lynis.log
+#cat /var/log/lynis-report.dat | grep "network_listen" >> lynis.log
+#cat /var/log/lynis-report.dat | grep "manual" >> lynis.log
 
 #Misc
 apt-get dist-upgrade
@@ -547,6 +549,7 @@ apt-get clean -y
 #9.View running services/daemons
 #10.view active ports
 #11.check system spec utilization
+#	-Run Lynis. Commands near top of script
 #12.check scoring
 #13.review readme, double check update status on named applications
 #14.If not 100, **brainstorm**, review config files, review running services
